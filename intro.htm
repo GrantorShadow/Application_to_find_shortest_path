@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1 {
+	color:blue;
+	margin: 0;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	
+}
+
+h2 {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+h3 {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.button_Pune {
+	color:blue;
+	margin: 0;
+	position: absolute;
+	top: 65%;
+	left: 48%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.button_Delhi {
+    
+	color:blue;
+	margin: 0;
+	position: absolute;
+	top: 74%;
+	left: 48%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.button_Bengaluru {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 65%;
+	left: 54%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.button_Chennai {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 74%;
+	left: 54%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+
+}
+
+</style>
+
+</head>
+<body style="background-image:url(indiamap.jpg); background-size: 100%">
+
+<h1 style="font-family:verdana;"> Application to find shortest path between two cities </h1>
+<h2 style="font-family:verdana;">Please choose your starting point</h2>
+
+<script>
+function PuneButtonPressed()
+{
+var value1="Pune";
+var queryString = "?para1=" + value1
+window.location.href = './test2.htm' + queryString;
+}
+
+function BengaluruButtonPressed()
+{
+var value1="Bengaluru";
+var queryString = "?para1=" + value1
+window.location.href = './test2.htm' + queryString;
+}
+
+function DelhiButtonPressed()
+{
+var value1="Delhi";
+var queryString = "?para1=" + value1
+window.location.href = './test2.htm' + queryString;
+}
+
+function ChennaiButtonPressed()
+{
+var value1="Chennai";
+var queryString = "?para1=" + value1
+window.location.href = './test2.htm' + queryString;
+}
+</script>
+
+<button style="height:40px;width:60px" class="button_Pune" onclick="PuneButtonPressed()" >Pune</button>
+<button style="height:40px;width:60px" class="button_Delhi" onclick="DelhiButtonPressed()" >Delhi</button>
+<button style="height:40px;width:80px" class="button_Bengaluru" onclick="BengaluruButtonPressed()" >Bengaluru</button>
+<button style="height:40px;width:70px" class="button_Chennai" onclick="ChennaiButtonPressed()" >Chennai</button>
+
+
+</body>
+</html>

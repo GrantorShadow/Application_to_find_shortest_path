@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+h1 {
+	color:blue;
+	margin: 0;
+	position: absolute;
+	top: 0%;
+	left: 50%;
+}
+
+h2 {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+h3 {
+    color:blue;
+	margin: 0;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+
+</style>
+<script src="cytoscape.js"></script>
+
+
+
+</head>
+
+<style>
+    #cy {
+        width: 380px;
+        height: 500px;
+        position: absolute;
+        top: 100px;
+        left: 500px;
+	}
+</style>
+
+<body style="background-image:url(indiamap.jpg); background-size: 100%">
+
+<div id="cy"></div>
+
+<Script>
+
+	//alert("In Script");
+
+	var cy = cytoscape
+	({
+		container: document.getElementById('cy'),
+		
+		style: cytoscape.stylesheet()
+		
+		.selector('node').css
+		({
+			'content': 'data(id)',
+			'width':15,
+			'height':15,
+		})
+		
+		.selector('edge').css
+		({
+			'curve-style': 'bezier',
+			'target-arrow-shape': 'triangle',
+			'width': 4,
+			'line-color': '#ddd',
+			'target-arrow-color': '#ddd',
+			'label': 'data(weight)', //test
+		})
+		
+		.selector('edge').css
+		({
+			'curve-style': 'bezier',
+			'target-arrow-shape': 'triangle',
+			'width': 4,
+			'line-color': '#ddd',
+			'target-arrow-color': '#ddd'
+		})
+		
+		.selector('.highlighted').css
+		({
+			/*
+			'background-color': '#61bffc',
+			'line-color': '#61bffc',
+			'target-arrow-color': '#61bffc',
+			*/
+			'background-color': '#4797D4',
+			'line-color': '#4797D4',
+			'target-arrow-color': '#4797D4',
+			'transition-property': 'background-color, line-color, target-arrow-color',
+			'transition-duration': '0.0000000000005s'
+		}),
+
+		layout: 
+		{
+			name: 'preset'
+		},
+
+		elements: 
+		[
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Pune'
+			},
+			position: { x: -5, y: 220 },
+			//style: {'background-image': ['india_image.png'], 'background-fit': 'cover cover', 'background-image-opacity': 0.5}
+		}, 
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Delhi'
+			},
+			position: { x: 60, y: -10 }
+		}, 
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Bengaluru'
+			},
+			position: { x: 70, y: 350 }
+		},
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Chennai'
+			},
+			//position: { x: 400, y: 400 }
+			position: { x: 120, y: 345 }
+		},
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Madurai'
+			},
+			//position: { x: 70, y: 400 }
+			position: { x: 70, y: 410 }
+		},
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Aurangabad'
+			},
+			position: { x: 30, y: 190 }
+		},
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Kolkata'
+			},
+			position: { x: 300, y: 130 }
+		},
+		{
+			group: 'nodes',
+			data: 
+			{
+				id: 'Hyderabad'
+			},
+			position: { x: 80, y: 240 }
+		},
+		{
+			data: 
+			{
+				id: 'e1',
+				source: 'Pune',
+				target: 'Delhi',
+				//weight: '1500',
+				weight: '1450',
+			}
+		}, 
+		{
+			data:
+			{
+				id: 'e2',
+				source: 'Delhi',
+				target: 'Bengaluru',
+				//weight: '2178',
+				weight: '2184',
+			}
+		}, 
+		{
+			data:
+			{
+				id: 'e3',
+				source: 'Bengaluru',
+				target: 'Chennai',
+				weight: '345',
+			}
+		},
+		{
+			data: 
+			{
+				id: 'e4',
+				source: 'Chennai',
+				target: 'Madurai',
+				weight: '727',
+			}
+		}, 
+		{
+			data: 
+			{
+				id: 'e5',
+				source: 'Madurai',
+				target: 'Aurangabad',
+				weight: '1733',
+			},
+		}, 
+		{
+			data: 
+			{
+				id: 'e6',
+				source: 'Aurangabad',
+				target: 'Kolkata',
+				//weight: '1706',
+			},
+		},
+		{
+			data:
+			{
+				id: 'e7',
+				source: 'Kolkata',
+				target: 'Hyderabad',
+				weight: '1492',
+			},
+		},
+		{
+			data:
+			{
+				id: 'e8',
+				source: 'Hyderabad',
+				target: 'Bengaluru',
+				weight: '561',
+			},
+		}, 
+		{
+			data: 
+			{
+				id: 'e9',
+				source: 'Aurangabad',
+				target: 'Bengaluru',
+				weight: '1041',
+			},
+		},
+		{
+			data: 
+			{
+				id: 'e10',
+				source: 'Pune',
+				target: 'Madurai',
+				weight: '1282',
+			},
+		},
+		{
+			data: 
+			{
+				id: 'e11',
+				source: 'Pune',
+				target: 'Aurangabad',
+				weight: '300',
+			},
+		},
+	//	{
+			//data: 
+			//{
+			//	id: 'e12',
+			//	source: 'Delhi',
+		//		target: 'Kolkata',
+		//		weight: '1491',
+		//	},
+		//}
+		],
+	});
+
+var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+var queries = queryString.split("&");
+var query1 = queries[0].split("=");
+var start = query1[1];
+alert("First City - " + start);
+var query2 = queries[1].split("=");
+var end = query2[1];
+alert("End City - " + end);
+
+//var start = "#Pune";
+//var end = "#Delhi";
+
+var StrStart = "#" + start;
+var StrEnd = "#" + end;
+
+var dij = cy.elements().aStar({
+  root: StrStart,
+  goal: StrEnd,
+  
+  weight: function(edge){
+  return edge.data('weight');
+ },
+  directed: true
+})
+//dij.path.select().addClass('highlighted');
+//console.log(dij.distance)
+
+var i = 0;
+var highlightNextEle = function(){
+  if( i < dij.path.length ){
+    dij.path[i].addClass('highlighted');
+
+    i++;
+    setTimeout(highlightNextEle, 1000);
+  }
+};
+
+// kick off first highlight
+highlightNextEle();
+
+</script>
+
+<h1 style="font-family:verdana;"> Application to find shortest path between two cities </h1>
+
+
+</body>
+</html>
